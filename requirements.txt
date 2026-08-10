@@ -1,0 +1,44 @@
+# ============================================
+# Kerala Flood Risk Scorer - Requirements (FIXED)
+# No strict version pins = pip picks what works on Windows
+# ============================================
+
+# === GEOSPATIAL CORE ===
+earthengine-api
+geemap
+rasterio
+geopandas
+shapely
+pyproj
+pysheds
+
+# === GEOCODING ===
+geopy
+
+# === MACHINE LEARNING ===
+scikit-learn
+pandas
+numpy
+joblib
+
+# === EXPLAINABILITY ===
+shap
+
+# === VISUALIZATION ===
+matplotlib
+seaborn
+plotly
+folium
+streamlit-folium
+
+# === STREAMLIT WEB APP ===
+streamlit
+
+# === PDF REPORT ===
+reportlab
+Pillow
+
+# === UTILITIES ===
+python-dotenv
+tqdm
+requests

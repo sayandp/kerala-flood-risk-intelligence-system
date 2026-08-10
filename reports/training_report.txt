@@ -1,0 +1,23 @@
+KERALA FLOOD RISK MODEL - TRAINING REPORT
+============================================================
+
+Model:         Random Forest (300 trees, max_depth=12)
+Training data: 793 balanced samples
+Features:      5
+
+PERFORMANCE
+------------------------------------------------------------
+Accuracy:    91.96%
+Recall:      91.92%
+Precision:   91.92%
+F1 Score:    0.919
+ROC-AUC:     0.975
+CV Accuracy: 94.83% ± 1.92%
+
+FEATURE IMPORTANCE
+------------------------------------------------------------
+elevation_m                  0.5015
+slope_degrees                0.4190
+distance_to_river_m          0.0517
+upstream_catchment_km2       0.0278
+is_historical_paddy          0.0000

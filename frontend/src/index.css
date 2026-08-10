@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+/* Sexy animated gradient background */
+body {
+  background: 
+    radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.1), transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(236, 72, 153, 0.08), transparent 60%),
+    #0a0a0f;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Animated gradient orbs */
+.gradient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 500px; height: 500px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  top: -100px; right: -100px;
+  animation: float-1 20s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 400px; height: 400px;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  bottom: -50px; left: -50px;
+  animation: float-2 25s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 350px; height: 350px;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  top: 40%; left: 30%;
+  animation: float-3 30s ease-in-out infinite;
+  opacity: 0.2;
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-50px, 50px); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(50px, -30px); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 30px) scale(1.1); }
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Leaflet map customizations for dark mode */
+.leaflet-container {
+  background: #0a0a0f !important;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 15, 25, 0.95) !important;
+  backdrop-filter: blur(16px);
+  color: white !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 15, 25, 0.95) !important;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(15, 15, 25, 0.9) !important;
+  color: white !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(30, 30, 45, 0.95) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(15, 15, 25, 0.7) !important;
+  color: rgba(255,255,255,0.6) !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-control-attribution a {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* Custom marker pulse */
+@keyframes pulse-ring {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Fancy text gradient */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradient-shift 4s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+/* Animated border */
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-border {
+  position: relative;
+  background: linear-gradient(90deg, #0a0a0f, #0a0a0f) padding-box,
+              linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4, #8b5cf6) border-box;
+  border: 2px solid transparent;
+  background-size: 200% 100%;
+  animation: border-flow 4s linear infinite;
+}
+
+/* Skeleton loader */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0.05) 0%, 
+    rgba(255,255,255,0.1) 50%, 
+    rgba(255,255,255,0.05) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}

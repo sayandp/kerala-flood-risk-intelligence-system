@@ -1,0 +1,94 @@
+# ============================================================
+# Kerala Flood Risk Project - .gitignore
+# ============================================================
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# === Distribution / packaging ===
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.egg
+
+# === Node.js / Frontend ===
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === Vite ===
+frontend/dist/
+frontend/.vite/
+
+# === Environment Variables (KEEP SECRETS OUT OF GIT) ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+frontend/.env
+frontend/.env.local
+
+# === Editors ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === Large Data Files (too big for GitHub) ===
+# Raw satellite data
+data/raw/copernicus_dem/*.tif
+data/raw/sentinel1_sar/*.tif
+data/raw/lulc_2020/*.tif
+data/raw/osm_kerala/*.geojson
+
+# Processed rasters
+data/processed/*.tif
+data/processed/*.OLD_BACKUP
+data/processed/*.OLD_RIVER_BACKUP
+
+# Allow small JSON files (the heatmap grid)
+!data/processed/*.json
+
+# Allow CSV (training data is small enough)
+!data/processed/*.csv
+
+# === Logs ===
+*.log
+logs/
+
+# === Project-specific ===
+_TRASH_*/
+*.OLD_BACKUP*
+*.bak
+
+# === Reports temp ===
+reports/_temp/
+reports/_scratch/
