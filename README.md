@@ -97,8 +97,8 @@ Type any Kerala property address → get an instant flood risk assessment combin
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/kerala-flood-risk.git
-cd kerala-flood-risk
+git clone https://github.com/sayandp/kerala-flood-risk-intelligence-system.git
+cd kerala-flood-risk-intelligence-system
 ```
 
 ### 2. Download data files
@@ -132,21 +132,41 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Run backend
+### 4. Configure environment
+```bash
+cp .env.example .env
+cp frontend/.env.example frontend/.env
+```
+The defaults work as-is. Two settings matter if you hit a conflict:
+
+| Variable | Default | Notes |
+|---|---|---|
+| `PORT` | `8001` | Backend port. Change it if 8001 is taken. |
+| `ALLOWED_ORIGINS` | `http://localhost:3000` | Origins allowed to call the API. Must include the frontend URL. |
+| `VITE_API_URL` | `http://localhost:8001` | Frontend → backend URL. Must match `PORT`. |
+
+`.env` is gitignored — no credentials belong in the repo. Earth Engine
+authentication (only needed to re-run the pipelines) uses your local
+credential cache via `earthengine authenticate`.
+
+### 5. Run backend
 ```bash
 cd backend
 python main.py
 ```
-Backend runs on `http://localhost:8000`  
-Auto-generated API docs: `http://localhost:8000/docs`
+Backend runs on `http://localhost:8001`  
+Auto-generated API docs: `http://localhost:8001/docs`
 
-### 5. Frontend setup (new terminal)
+### 6. Frontend setup (new terminal)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 App opens at `http://localhost:3000`
+
+> **Note:** Vite reads `.env` only at startup. If you change `VITE_API_URL`,
+> restart `npm run dev`.
 
 ## 📁 Project Structure
 
@@ -257,12 +277,12 @@ Why this matters: a regulator (or bank) can audit each rule. Pure ML is a black 
 
 ## 👤 Author
 
-**[Your Name]**  
+**Sayand P**  
 Post Graduate Diploma in Data Science  
-[Your Institution]
+University of Calicut
 
-📧 [your.email@example.com]  
-💼 [LinkedIn](https://linkedin.com/in/yourprofile)
+📧 sayandp0@gmail.com  
+💼 [LinkedIn](https://www.linkedin.com/in/sayand-p-2215a9225/)
 
 ## 📄 License
 
